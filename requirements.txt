@@ -1,0 +1,9 @@
+streamlit
+llama_index.llms
+llama_index
+docx2txt
+llama-cpp-python
+llama_index
+io
+os
+boto3
