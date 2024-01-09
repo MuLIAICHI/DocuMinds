@@ -4,17 +4,9 @@ from llama_index.llms import OpenAI
 from llama_index import VectorStoreIndex, SimpleDirectoryReader
 from llama_index import StorageContext, load_index_from_storage
 from dotenv import load_dotenv
-import requests
-from models import db, UploadedFile
 
 load_dotenv()
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///uploads.db'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db.init_app(app)
-
-with app.app_context():
-    db.create_all()
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -35,17 +27,6 @@ def process_query(query):
     response = query_engine.query(query)
     return response
 
-@app.route('/upload-pdf', methods=['POST'])
-def upload_pdf():
-    pdf_url = request.form['pdf_url']
-    new_file = UploadedFile(file_url=pdf_url)
-    db.session.add(new_file)
-    db.session.commit()
-    return "PDF uploaded successfully!"
-
-@app.route('/upload')
-def upload_page():
-    return render_template('upload.html')
 
 
 if __name__ == '__main__':
