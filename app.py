@@ -7,14 +7,14 @@ from dotenv import load_dotenv
 load_dotenv()
 app = Flask(__name__, template_folder=r'static\templates')
 
-@app.route('/home', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         data = request.get_json()
         query = data['query']
         response = process_query(query)
         return jsonify({'response': response})
-    return render_template('index.html')
+    return render_template('content.html')
 
 def process_query(query):
     if not os.path.exists('data'):
