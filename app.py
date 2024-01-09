@@ -18,12 +18,14 @@ def index():
     return render_template('index.html')
 
 def process_query(query):
+    if not os.path.exists('data'):
+        os.makedirs('data')
     documents = SimpleDirectoryReader("data").load_data()
     index = VectorStoreIndex.from_documents(documents)
     index.storage_context.persist()
     storage_context = StorageContext.from_defaults(persist_dir="./storage")
     index0 = load_index_from_storage(storage_context=storage_context)
-    query_engine = index.as_query_engine()
+    query_engine = index0.as_query_engine()
     response = query_engine.query(query)
     return response
 
