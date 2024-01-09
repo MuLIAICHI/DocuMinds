@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, jsonify
 import os
 from llama_index.llms import OpenAI
 from llama_index import VectorStoreIndex, SimpleDirectoryReader
@@ -10,11 +10,13 @@ app = Flask(__name__)
 
 
 @app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
-        query = request.form['query']
+        data = request.get_json()
+        query = data['query']
         response = process_query(query)
-        return render_template('response.html', response=response)
+        return jsonify({'response': response})
     return render_template('index.html')
 
 def process_query(query):
