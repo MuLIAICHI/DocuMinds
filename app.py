@@ -5,7 +5,6 @@ from llama_index import VectorStoreIndex, SimpleDirectoryReader
 from llama_index import StorageContext, load_index_from_storage
 from dotenv import load_dotenv
 import requests
-from flask_sqlalchemy import SQLAlchemy
 from models import db, UploadedFile
 
 load_dotenv()
