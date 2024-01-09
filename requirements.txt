@@ -60,4 +60,4 @@ openai == 1.6.1
 transformers == 4.11.3
 accelerate == 0.4.0
 docx2txt == 0.8
-llama-cpp-python == 0.9.27
+llama-cpp-python 
