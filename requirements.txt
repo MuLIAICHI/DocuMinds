@@ -14,7 +14,6 @@ dataclasses-json==0.6.3
 Deprecated==1.2.14
 distro==1.9.0
 Flask==3.0.0
-Flask-SQLAlchemy==3.1.1
 frozenlist==1.4.1
 fsspec==2023.12.2
 greenlet==3.0.3
