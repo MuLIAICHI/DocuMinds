@@ -17,7 +17,7 @@ def index():
         query = data['query']
         response = process_query(query)
         return jsonify({'response': response})
-    return render_template('index.html')
+    return render_template('C:\Users\dell\Desktop\toTransfer\Formation\PersonalProjects\educational-chatbot\educational-chatbot\static\templates\index.html')
 
 def process_query(query):
     if not os.path.exists('data'):
