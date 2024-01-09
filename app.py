@@ -8,8 +8,11 @@ load_dotenv()
 app = Flask(__name__)
 
 
+@app.route('/')
+def home():
+    return render_template('index.html')
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/home', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         data = request.get_json()
