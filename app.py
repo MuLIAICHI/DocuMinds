@@ -5,7 +5,7 @@ from llama_index import StorageContext, load_index_from_storage
 from dotenv import load_dotenv
 
 load_dotenv()
-app = Flask(__name__, template_folder=r'static\templates')
+app = Flask(__name__, template_folder='static/templates')
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -14,7 +14,7 @@ def index():
         query = data['query']
         response = process_query(query)
         return jsonify({'response': response})
-    return render_template('content.html')
+    return render_template('index.html')
 
 def process_query(query):
     if not os.path.exists('data'):
