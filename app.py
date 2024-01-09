@@ -5,12 +5,7 @@ from llama_index import StorageContext, load_index_from_storage
 from dotenv import load_dotenv
 
 load_dotenv()
-app = Flask(__name__)
-
-
-@app.route('/')
-def home():
-    return render_template('index.html')
+app = Flask(__name__, template_folder=r'static\templates')
 
 @app.route('/home', methods=['GET', 'POST'])
 def index():
