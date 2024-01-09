@@ -1,6 +1,5 @@
 from flask import Flask, request, render_template, jsonify
 import os
-from llama_index.llms import OpenAI
 from llama_index import VectorStoreIndex, SimpleDirectoryReader
 from llama_index import StorageContext, load_index_from_storage
 from dotenv import load_dotenv
@@ -9,7 +8,7 @@ load_dotenv()
 app = Flask(__name__)
 
 
-@app.route('/', methods=['GET', 'POST'])
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
@@ -17,7 +16,7 @@ def index():
         query = data['query']
         response = process_query(query)
         return jsonify({'response': response})
-    return render_template(r'C:\Users\dell\Desktop\toTransfer\Formation\PersonalProjects\educational-chatbot\educational-chatbot\static\templates\index.html')
+    return render_template('index.html')
 
 def process_query(query):
     if not os.path.exists('data'):
