@@ -61,3 +61,5 @@ transformers
 accelerate 
 docx2txt 
 llama-cpp-python 
+cloudinary
+requests
