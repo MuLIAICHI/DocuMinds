@@ -59,24 +59,24 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="{{ url_for('static', filename='templates/index.html') }}" class="nav-item nav-link active">Home</a>
-                        <a href="{{ url_for('static', filename='templates/about.html') }}" class="nav-item nav-link">About</a>
-                        <a href="{{ url_for('static', filename='templates/service.html') }}"class="nav-item nav-link">Services</a>
-                        <!-- <a href="project.html" class="nav-item nav-link">Projects</a> -->
+                        <a href="#home" class="nav-item nav-link active">Home</a>
+                        <a href="#about" class="nav-item nav-link">About</a>
+                        <a href="#services" class="nav-item nav-link">Services</a>
+                        <a href="#study" class="nav-item nav-link">AI Study Buddy</a>
+                        <!-- Remove the commented part if you have sections for them -->
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu bg-light mt-2">
-                                <a href="{{ url_for('static', filename='templates/feature.html') }}" class="dropdown-item">Features</a>
-                                <a href="{{ url_for('static', filename='templates/team.html') }}" class="dropdown-item">Our Team</a>
-                                <a href="{{ url_for('static', filename='templates/faq.html') }}" class="dropdown-item">FAQs</a>
-                                <!-- <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a> -->
+                                <!-- <a href="#features" class="dropdown-item">Features</a> -->
+                                <a href="#team" class="dropdown-item">Our Team</a>
+                                <a href="#faqs" class="dropdown-item">FAQs</a>
+                                <!-- Add other sections if needed -->
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="#contact" class="nav-item nav-link">Contact</a>
                     </div>
-                    <butaton type="button" class="btn text-white p-0 d-none d-lg-block" data-bs-toggle="modal"
-                        data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
+                    <button type="button" class="btn text-white p-0 d-none d-lg-block" data-bs-toggle="modal"
+                        data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
                 </div>
             </nav>
         </div>
@@ -85,7 +85,7 @@
 
 
     <!-- Hero Start -->
-    <div class="container-fluid pt-5 bg-primary hero-header mb-5">
+    <div class="container-fluid pt-5 bg-primary hero-header mb-5" id="home">
         <div class="container pt-5">
             <div class="row g-5 pt-5">
                 <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
@@ -96,7 +96,7 @@
                     <a href="" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
                 </div>
                 <div class="col-lg-6 align-self-end text-center text-lg-end">
-                    <img class="img-fluid" src="{{ url_for('static', filename='img/hero-image.jpg') }}" alt="">
+                    <img class="img-fluid" src="{{ url_for('static', filename='img/hero-image.png') }}" alt="">
                 </div>
             </div>
         </div>
@@ -126,7 +126,7 @@
 
 
     <!-- About Start -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5" id="about">
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
@@ -147,7 +147,7 @@
 
 
     <!-- Service Start -->
-    <div class="container-fluid bg-light mt-5 py-5">
+    <div class="container-fluid bg-light mt-5 py-5" id="services">
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
@@ -217,7 +217,7 @@
 
 
     <!-- FAQs Start -->
-    <div class="container-fluid py-5">
+    <div class="container-fluid py-5" id="faqs">
         <div class="container py-5">
             <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
                 <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Popular FAQs</div>
@@ -330,7 +330,7 @@
 
 
     <!-- Team Start -->
-    <div class="container-fluid bg-light py-5">
+    <div class="container-fluid bg-light py-5" id="team">
         <div class="container py-5">
             <div class="row g-5 align-items-center">
                 <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
@@ -448,8 +448,7 @@
     <!-- Testimonial End -->
 
     <!-- Newsletter Start -->
-    <main>
-        <div class="container-fluid bg-primary newsletter py-5">
+    <div class="container-fluid bg-primary newsletter py-5" id="study">
             <div class="container">
                 <div class="row g-5 align-items-center">
                     <div class="col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
@@ -469,9 +468,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+    </div>
     
-        <script>
+    <script>
             function submitQuery() {
                 var query = document.getElementById('queryInput').value;
                 fetch('/', {
@@ -491,9 +490,7 @@
                     MathJax.typesetPromise();
                 });
             }
-            </script>
-            
-    </main>
+    </script>
     <!-- Newsletter End -->
 
 
