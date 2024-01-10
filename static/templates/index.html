@@ -50,7 +50,7 @@
     <div class="container-fluid sticky-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark p-0">
-                <a href="{{ url_for('static', filename='templates/index.html') }}" class="navbar-brand">
+                <a href="index.html" class="navbar-brand">
                     <h1 class="text-white">DataMind<span class="text-dark">.</span>ESI</h1>
                 </a>
                 <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
@@ -73,7 +73,7 @@
                                 <a href="404.html" class="dropdown-item">404 Page</a> -->
                             </div>
                         </div>
-                        <a href="{{ url_for('static', filename='templates/contact.html') }}" class="nav-item nav-link">Contact</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
                     <butaton type="button" class="btn text-white p-0 d-none d-lg-block" data-bs-toggle="modal"
                         data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
@@ -335,8 +335,10 @@
             <div class="row g-5 align-items-center">
                 <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
                     <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Our Team</div>
-                    <h1 class="mb-4">Meet Our Team Members</h1>
-                    <p class="mb-4">As two enthusiastic data science students, my friend and I are deeply immersed in the fascinating world of Artificial Intelligence and Machine Learning. Our journey is fueled by a relentless curiosity and a strong desire to unlock the potential of data-driven insights. We spend our days exploring various AI models and algorithms, constantly amazed by their ability to transform complex data into meaningful information. Our passion lies in not just understanding the technicalities of machine learning, but also in applying these innovative technologies to solve real-world problems, thereby contributing to advancements in this dynamic field.</p>
+                    <h1 class="mb-4">Meet Our Experienced Team Members</h1>
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
+                        amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus
+                        clita duo justo et tempor eirmod magna dolore erat amet</p>
                     <a class="btn btn-primary rounded-pill px-4" href="">Read More</a>
                 </div>
                 <div class="col-lg-7">
@@ -346,8 +348,8 @@
                                 <div class="col-12 wow fadeIn" data-wow-delay="0.1s">
                                     <div class="team-item bg-white text-center rounded p-4 pt-0">
                                         <img class="img-fluid rounded-circle p-4" src="{{ url_for('static', filename='img/team-1.jpeg') }}" alt="">
-                                        <h5 class="mb-0">LIAICHI MUSTAPHA</h5>
-                                        <small>Founder</small>
+                                        <h5 class="mb-0">Boris Johnson</h5>
+                                        <small>Founder & CEO</small>
                                         <div class="d-flex justify-content-center mt-3">
                                             <a class="btn btn-square btn-primary m-1" href=""><i
                                                     class="fab fa-facebook-f"></i></a>
@@ -359,15 +361,16 @@
                                                     class="fab fa-linkedin-in"></i></a>
                                         </div>
                                     </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 pt-md-4">
                             <div class="row g-4">
-                                <div class="col-12 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="col-12 wow fadeIn" data-wow-delay="0.3s">
                                     <div class="team-item bg-white text-center rounded p-4 pt-0">
-                                        <img class="img-fluid rounded-circle p-4" src="{{ url_for('static', filename='img/team-2.jpeg') }}" alt="">
-                                        <h5 class="mb-0">HAMZA EL MAATAOUI</h5>
-                                        <small>co-founder</small>
+                                        <img class="img-fluid rounded-circle p-4" src="{{ url_for('static', filename='img/team-3.jpg') }}" alt="">
+                                        <h5 class="mb-0">Kate Winslet</h5>
+                                        <small>Co Founder</small>
                                         <div class="d-flex justify-content-center mt-3">
                                             <a class="btn btn-square btn-primary m-1" href=""><i
                                                     class="fab fa-facebook-f"></i></a>
@@ -391,7 +394,7 @@
 
 
     <!-- Testimonial Start -->
-    <!-- <div class="container-xxl py-5">
+    <div class="container-xxl py-5">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
@@ -408,7 +411,7 @@
                             <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
                             <p class="fs-4">Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet</p>
                             <div class="d-flex align-items-center">
-                                <img class="img-fluid flex-shrink-0 rounded-circle" src="{{ url_for('static', filename='img/testimonial.jpg') }}"
+                                <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg"
                                     style="width: 60px; height: 60px;">
                                 <div class="ps-3">
                                     <h5 class="mb-1">Client Name</h5>
@@ -444,10 +447,10 @@
                 </div>
             </div>
         </div>
-    </div> -->
+    </div>
     <!-- Testimonial End -->
 
-    <!-- Study Bud Start -->
+    <!-- Newsletter Start -->
     <main>
         <div class="container-fluid bg-primary newsletter py-5">
             <div class="container">
@@ -497,7 +500,7 @@
     
     
     
-    <!-- Study Bud End -->
+    <!-- Newsletter End -->
 
 
     <!-- Footer Start -->
@@ -505,16 +508,18 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
-                    <a href="{{ url_for('static', filename='templates/index.html') }}" class="d-inline-block mb-3">
+                    <a href="index.html" class="d-inline-block mb-3">
                         <h1 class="text-white">DataMind<span class="text-primary">.</span>ESI</h1>
                     </a>
-                    <p class="mb-0">AI Study Buddy offers personalized learning assistance to enhance your understanding and performance in school courses. Prepare for exams with AI-driven insights and support.</p>
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
+                        amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus
+                        clita duo justo et tempor</p>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
                     <h5 class="text-white mb-4">Get In Touch</h5>
-                    <p><i class="fa fa-map-marker-alt me-3"></i>Av. Allal Al Fassi, Rabat</p>
-                    <p><i class="fa fa-phone-alt me-3"></i>+212 691626946</p>
-                    <p><i class="fa fa-envelope me-3"></i>liaichimustapha@gmail.com</p>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                    <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -533,11 +538,11 @@
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
                     <h5 class="text-white mb-4">Our Services</h5>
-                    <a class="btn btn-link" href="">Course Simplification</a>
-                    <a class="btn btn-link" href="">Interactive Q&A</a>
-                    <a class="btn btn-link" href="">Insightful Summaries</a>
-                    <a class="btn btn-link" href="">Course Simplification</a>
-                    <!-- <a class="btn btn-link" href="">Robot Technology</a> -->
+                    <a class="btn btn-link" href="">Robotic Automation</a>
+                    <a class="btn btn-link" href="">Machine learning</a>
+                    <a class="btn btn-link" href="">Predictive Analysis</a>
+                    <a class="btn btn-link" href="">Data Science</a>
+                    <a class="btn btn-link" href="">Robot Technology</a>
                 </div>
             </div>
         </div>
