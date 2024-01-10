@@ -30,6 +30,7 @@ def process_query(query):
     index0 = load_index_from_storage(storage_context=storage_context)
     query_engine = index0.as_query_engine()
     response = query_engine.query(query)
+    print("Type of response:", type(response))
     return response
 
 
