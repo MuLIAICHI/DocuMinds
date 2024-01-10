@@ -521,7 +521,7 @@
                 .then(response => response.json())
                 .then(data => {
                     // Assuming the response is in LaTeX format
-                    var formattedResponse = `$$${data.response}$$`; // Wrap response in MathJax delimiters
+                    var formattedResponse = `${data.response}`; // Wrap response in MathJax delimiters
                     document.getElementById('responseTextArea').value = formattedResponse;
             
                     // Trigger MathJax to process the new content
