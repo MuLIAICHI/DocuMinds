@@ -17,6 +17,7 @@ def index():
     return render_template('index.html')
 
 def process_query(query):
+    print("Received query:", query)  # Add this line to print the query to the console
     if not os.path.exists('data'):
         os.makedirs('data')
     documents = SimpleDirectoryReader("data").load_data()
