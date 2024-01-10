@@ -29,6 +29,9 @@
 
     <!-- Template Stylesheet -->
     <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <!-- MathJX library -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </head>
 
@@ -48,7 +51,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark p-0">
                 <a href="index.html" class="navbar-brand">
-                    <h1 class="text-white">AI<span class="text-dark">.</span>Tech</h1>
+                    <h1 class="text-white">DataMind<span class="text-dark">.</span>ESI</h1>
                 </a>
                 <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">
@@ -506,21 +509,27 @@
         </div>
     
         <script>
-        function submitQuery() {
-            var query = document.getElementById('queryInput').value;
-            fetch('/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ query: query })
-            })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('responseTextArea').value = data.response;
-            });
-        }
-        </script>
+            function submitQuery() {
+                var query = document.getElementById('queryInput').value;
+                fetch('/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ query: query })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Assuming the response is in LaTeX format
+                    var formattedResponse = `$$${data.response}$$`; // Wrap response in MathJax delimiters
+                    document.getElementById('responseTextArea').value = formattedResponse;
+            
+                    // Trigger MathJax to process the new content
+                    MathJax.typesetPromise();
+                });
+            }
+            </script>
+            
     </main>
     
     
