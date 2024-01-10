@@ -13,6 +13,7 @@ def index():
         data = request.get_json()
         query = data['query']
         response = process_query(query)
+        print(f"Response: {response}")
         return jsonify({'response': response})
     return render_template('index.html')
 
