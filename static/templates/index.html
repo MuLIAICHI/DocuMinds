@@ -498,10 +498,8 @@
                                 placeholder="Ask your study question here" style="height: 48px;">
                             <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2" onclick="submitQuery()"><i
                                     class="fa fa-paper-plane text-primary fs-4"></i></button>
-                        </div>
-                        <div id="responseContainer" class="mt-4 text-white" style="min-height: 100px;">
+                        <textarea id="responseTextArea" class="form-control mt-4" rows="6" readonly></textarea>
                             <!-- AI response will be displayed here -->
-                        </div>
                     </div>
                 </div>
             </div>
@@ -519,8 +517,7 @@
             })
             .then(response => response.json())
             .then(data => {
-                console.log(data);
-                document.getElementById('responseContainer').innerHTML = data.response;
+                document.getElementById('responseTextArea').value = data.response;
             });
         }
         </script>
