@@ -50,7 +50,7 @@
     <div class="container-fluid sticky-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark p-0">
-                <a href="index.html" class="navbar-brand">
+                <a href="{{ url_for('static', filename='templates/index.html') }}" class="navbar-brand">
                     <h1 class="text-white">DataMind<span class="text-dark">.</span>ESI</h1>
                 </a>
                 <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
@@ -73,7 +73,7 @@
                                 <a href="404.html" class="dropdown-item">404 Page</a> -->
                             </div>
                         </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="{{ url_for('static', filename='templates/contact.html') }}" class="nav-item nav-link">Contact</a>
                     </div>
                     <butaton type="button" class="btn text-white p-0 d-none d-lg-block" data-bs-toggle="modal"
                         data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
@@ -359,7 +359,10 @@
                                                     class="fab fa-linkedin-in"></i></a>
                                         </div>
                                     </div>
-                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row g-4">
                                 <div class="col-12 wow fadeIn" data-wow-delay="0.5s">
                                     <div class="team-item bg-white text-center rounded p-4 pt-0">
                                         <img class="img-fluid rounded-circle p-4" src="{{ url_for('static', filename='img/team-2.jpeg') }}" alt="">
@@ -505,9 +508,7 @@
                     <a href="{{ url_for('static', filename='templates/index.html') }}" class="d-inline-block mb-3">
                         <h1 class="text-white">DataMind<span class="text-primary">.</span>ESI</h1>
                     </a>
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
-                        amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus
-                        clita duo justo et tempor</p>
+                    <p class="mb-0">AI Study Buddy offers personalized learning assistance to enhance your understanding and performance in school courses. Prepare for exams with AI-driven insights and support.</p>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
                     <h5 class="text-white mb-4">Get In Touch</h5>
