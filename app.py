@@ -13,8 +13,7 @@ def index():
         data = request.get_json()
         query = data['query']
         response = process_query(query)
-        response_data = [{'text': node.get_text()} for node in response]
-        return response_data
+        return response
     return render_template('index.html')
 
 def process_query(query):
@@ -30,9 +29,10 @@ def process_query(query):
     index0 = load_index_from_storage(storage_context=storage_context)
     query_engine = index0.as_query_engine()
     response = query_engine.query(query)
-    print("Type of response:", type(response))
-    return response
+    # Extract the response text
+    response_text = response.response
 
+    return jsonify({'response': response_text})
 
 
 if __name__ == '__main__':
